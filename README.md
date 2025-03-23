@@ -24,8 +24,8 @@ Web application for managing Telegram bot settings. Allows you to manage bot nam
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd projectTgAdmin
+   git clone https://github.com/grulex/telegram-stepfatherbot.git
+   cd telegram-stepfatherbot
    ```
 
 2. Install dependencies:
@@ -47,8 +47,8 @@ Web application for managing Telegram bot settings. Allows you to manage bot nam
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd projectTgAdmin
+   git clone https://github.com/grulex/telegram-stepfatherbot.git
+   cd telegram-stepfatherbot
    ```
 
 2. Start with Docker Compose:
