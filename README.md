@@ -2,6 +2,8 @@
 
 Web application for managing Telegram bot settings. Allows you to manage bot names, descriptions, and short descriptions in different languages.
 
+![Screenshot](https://github.com/grulex/telegram-stepfatherbot/raw/main/screenshot.png)
+
 ## Features
 
 - 🤖 Manage multiple Telegram bots
