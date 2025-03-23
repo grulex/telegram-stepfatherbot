@@ -178,15 +178,17 @@ app.post('/api/bots', async (req, res) => {
     // Получаем настройки для дефолтного языка
     const baseUrl = `https://api.telegram.org/bot${token}`;
     const [nameRes, descRes, shortDescRes] = await Promise.all([
-      fetch(`${baseUrl}/getMyName`).then(r => r.json()),
-      fetch(`${baseUrl}/getMyDescription`).then(r => r.json()),
-      fetch(`${baseUrl}/getMyShortDescription`).then(r => r.json())
+      fetch(`${baseUrl}/getMyName`),
+      fetch(`${baseUrl}/getMyDescription`),
+      fetch(`${baseUrl}/getMyShortDescription`)
     ]);
 
-    if (!nameRes.ok) throw new Error(`Ошибка при получении имени: ${nameRes.description}`);
-    if (!descRes.ok) throw new Error(`Ошибка при получении описания: ${descRes.description}`);
-    if (!shortDescRes.ok) throw new Error(`Ошибка при получении короткого описания: ${shortDescRes.description}`);
+    // Проверяем, что все запросы успешны
+    if (!nameRes.ok) throw new Error(`Ошибка при получении имени: ${nameRes.statusText}`);
+    if (!descRes.ok) throw new Error(`Ошибка при получении описания: ${descRes.statusText}`);
+    if (!shortDescRes.ok) throw new Error(`Ошибка при получении короткого описания: ${shortDescRes.statusText}`);
 
+    // Теперь можно безопасно вызывать .json() на каждом ответе
     const [nameData, descData, shortDescData] = await Promise.all([
       nameRes.json(),
       descRes.json(),
@@ -454,16 +456,17 @@ app.post('/api/bots/:botId/refresh', async (req, res) => {
       fetch(`${baseUrl}/getMyShortDescription`)
     ]);
 
+    // Проверяем, что все запросы успешны
+    if (!nameRes.ok) throw new Error(`Ошибка при получении имени: ${nameRes.statusText}`);
+    if (!descRes.ok) throw new Error(`Ошибка при получении описания: ${descRes.statusText}`);
+    if (!shortDescRes.ok) throw new Error(`Ошибка при получении короткого описания: ${shortDescRes.statusText}`);
+
+    // Теперь можно безопасно вызывать .json() на каждом ответе
     const [nameData, descData, shortDescData] = await Promise.all([
       nameRes.json(),
       descRes.json(),
       shortDescRes.json()
     ]);
-
-    // Проверяем ответы от API
-    if (!nameData.ok) throw new Error(`Ошибка при получении имени: ${nameData.description}`);
-    if (!descData.ok) throw new Error(`Ошибка при получении описания: ${descData.description}`);
-    if (!shortDescData.ok) throw new Error(`Ошибка при получении короткого описания: ${shortDescData.description}`);
 
     // Сохраняем дефолтные настройки
     const defaultSettings = {
