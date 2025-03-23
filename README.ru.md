@@ -24,8 +24,8 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone <repository-url>
-   cd projectTgAdmin
+   git clone https://github.com/grulex/telegram-stepfatherbot.git
+   cd telegram-stepfatherbot
    ```
 
 2. Установите зависимости:
@@ -47,8 +47,8 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone <repository-url>
-   cd projectTgAdmin
+   git clone https://github.com/grulex/telegram-stepfatherbot.git
+   cd telegram-stepfatherbot
    ```
 
 2. Запустите с помощью Docker Compose:
