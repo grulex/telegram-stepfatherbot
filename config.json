@@ -1,0 +1,13 @@
+{
+  "languages": [
+    { "code": "ru", "name": "Русский" },
+    { "code": "en", "name": "English" },
+    { "code": "tr", "name": "Türkçe" },
+    { "code": "es", "name": "Español" },
+    { "code": "fa", "name": "فارسی" },
+    { "code": "uk", "name": "Українська" },
+    { "code": "id", "name": "Bahasa Indonesia" },
+    { "code": "ar", "name": "العربية" },
+    { "code": "fr", "name": "Français" }
+  ]
+} 
